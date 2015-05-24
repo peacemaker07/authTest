@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'api',
     'web',
     'social.apps.django_app.default',
+#    'social_auth',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -55,14 +56,16 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
     'social.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend',
-    'social_auth.backends.facebook.FacebookBackend',
 )
 
 LOGIN_REDIRECT_URL = '/'
-FACEBOOK_APP_ID='683411541787092'
-FACEBOOK_API_SECRET='dfebf339aec6cef4fae2147117cedfe5'
+
+SOCIAL_AUTH_FACEBOOK_KEY='683411541787092'
+SOCIAL_AUTH_FACEBOOK_SECRET='dfebf339aec6cef4fae2147117cedfe5'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
