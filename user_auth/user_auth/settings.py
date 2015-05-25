@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'web',
     'social.apps.django_app.default',
 #    'social_auth',
+    'batch',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
